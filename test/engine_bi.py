@@ -6,7 +6,8 @@ import datetime as dt
 import os, sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.append(libdir)
+libdir2 = os.path.abspath(os.path.join(basedir, '../lib/cups'));
+sys.path.insert(0,libdir)
 
 
 from kdb import *

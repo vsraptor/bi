@@ -5,7 +5,7 @@ import logging as log
 import os, sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.append(libdir)
+sys.path.insert(0,libdir)
 
 
 """
@@ -34,7 +34,7 @@ class Integrate:
 		#use SDPI to mimic integer atoms i.e. virtual SDP
 		if cupi :
 			log.info('Using <ints> .....')
-			self.ints = CUPInteger(vmax=100, width=5000)
+			self.ints = CUPInteger(vmax=100, width=sdp.nbits/2)
 			self.kdb = KDB(items=50, cups=[self.ints])
 		else : self.kdb = KDB(items=50) # any digit will get its own entry in .atoms lex
 

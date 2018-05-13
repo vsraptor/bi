@@ -2,7 +2,7 @@
 import os, sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.append(libdir)
+sys.path.insert(0,libdir)
 
 print libdir 
 

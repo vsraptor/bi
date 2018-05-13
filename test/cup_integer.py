@@ -6,7 +6,7 @@ import seaborn as sns
 import os, sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.append(libdir)
+sys.path.insert(0,libdir)
 
 """
 	Test the capability of CUPInteger to represent integer range.
@@ -25,7 +25,7 @@ log.root.setLevel(log.INFO)
 
 def test(test_range, vmin=0, vmax=100, flips=10):
 	stats = { 'ok' : 0, 'fail' : 0 }
-	ints = CUPInteger(vmin=vmin, vmax=vmax, width=5000)
+	ints = CUPInteger(vmin=vmin, vmax=vmax, width=sdp.nbits/2)
 	for i in test_range :
 		enc = ints.encode_sdp(i)
 		sdp.flip_bits(enc,flips)
@@ -67,7 +67,7 @@ def run() :
 
 flippings = [ 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4200, 4500 ]
 maxes = xrange(100,1001,100)
-#run()
+run()
 
 #plt.grid()
 #plt.imshow(np.flipud(rv), cmap='Greys', interpolation='nearest', aspect='auto')
