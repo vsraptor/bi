@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-import os, sys
-basedir = os.path.abspath(os.path.dirname(__file__))
-libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.insert(0,libdir)
-
-print libdir 
+import imports
+imports.import_lib()
 
 from bi_engine import *
 from kdb import *

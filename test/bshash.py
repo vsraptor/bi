@@ -2,10 +2,8 @@
 import re
 import logging as log
 
-import os, sys
-basedir = os.path.abspath(os.path.dirname(__file__))
-libdir = os.path.abspath(os.path.join(basedir, '../lib'));
-sys.path.insert(0,libdir)
+import imports
+imports.import_lib()
 
 import string
 

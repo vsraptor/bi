@@ -1,7 +1,7 @@
-from cups.dyn_memory import DynMemory
+from dyn_memory import DynMemory
 from bi import sdp, SDP
-from cups.lexicon import lex
-from cups.hashed_lex import *
+from lexicon import lex
+from hashed_lex import *
 from bi_utils import *
 from utils import get_size
 
