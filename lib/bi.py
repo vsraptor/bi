@@ -26,6 +26,11 @@ class sdp: #utility class
 	nbits = 10000
 
 	@staticmethod
+	def sdp2np(bits):
+		return np.fromstring(bits.unpack(), dtype=np.bool).astype(np.int8)
+
+
+	@staticmethod
 	def null(nbits=nbits): return SDP(nbits)
 	@staticmethod
 	def full(nbits=nbits):
@@ -113,20 +118,33 @@ class sdp: #utility class
 		return sdp.inv_permute(sdp.bind(a, ab), pmx)
 	pprobe = permuted_probe
 
-	#ToDo ... loop over the bits and nudge towards the "average"
+	#Bundling, set composition, superposition, merge
 	@staticmethod
-	def bundle2(lst):#!fixme
-		if len(lst) < 2 : raise Exception("Need more than one SDP when bundling")
-		nbits = len(lst[0])
-		rv = SDP(nbits)
-		dists = np.zeros(nbits, dtype=np.int)
-		for i in xrange(nbits) :
-			pass
-			#compare and nudge
+	def bundle(lst, nbits=nbits):
+		nrows = len(lst)
+		vsum = np.zeros(nbits, dtype=np.int8)
+		for i in xrange(nrows) :
+			vsum += sdp.sdp2np(lst[i])
+
+		above_thresh = np.where( vsum > nrows/2. )[0]
+
+		rv = SDP(nbits) #all zeros
+		#set to 1 all bits above the threhold
+		if len(above_thresh) > 0 : sdp.set_by_ixs(rv,above_thresh)
+		if nrows % 2 == 0 : #even
+			ties = np.where( vsum == nrows/2 )[0] #which cols are even
+			size = len(ties)
+			if size > 2 :#more than 2 ties, pick randomly 50%, which to set to 1
+				rand_ixs = np.random.choice(ties, size=int(np.round(0.5 * size)), replace=False )
+				sdp.set_by_ixs(rv,rand_ixs)
+
+		return rv
+
+
 
 	#Bundling, set composition, superposition, merge
 	@staticmethod
-	def bundle(lst):
+	def bundle2(lst):
 		nrows = len(lst)
 		if nrows < 2 : raise Exception("Need more than one SDP when bundling")
 		nbits = len(lst[0])
