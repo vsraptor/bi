@@ -189,17 +189,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-Bi-?">What is Bi ?<a class="anchor-link" href="#What-is-Bi-?">&#182;</a></h2><p>Imagine programming with symbols in language like List or Prolog  ... but at the same time those symbols are distributed-vectors, which can be mixed as only vectors can do, but still preserving their symbolic nature.
-Something like having the whole cake, but eating it too.</p>
-<p><strong>Bi</strong> is build on top of the so called <strong>VSA (Vector Symbolic Architecture)</strong>.</p>
+<h2 id="What-is-Bi-?">What is Bi ?<a class="anchor-link" href="#What-is-Bi-?">&#182;</a></h2><p>When you use programming language you rely on the symbols of the language to have a specific meaning, very rarely it is the case for a programming language to allow fuzzy and context based meaning, because it complicates the implementation. On the other hand natural languages are both <strong>discrete</strong> and <strong>fuzzy</strong>.</p>
+<p>To make programming languages more natural we have to embrace this dichotomy... one way to make the symbols behave this way is to represent symbols as vectors to achieve fuzziness, but still preserve discreteness.
+I call this feature <strong>nearly-decomposable-symbols</strong> in the spirit of the Herbert Simon paper on Complexity.</p>
+<p>Something like having the whole cake, but eating it too.</p>
+<p>That is why <strong>Bi</strong> is build on top of the so called <strong>VSA (Vector Symbolic Architecture)</strong>.</p>
 <p>As the name implies the symbols are not your run of the mill symbols, but rather vector based i.e. symbolic system based on vector-distributed symbols, instead of traditional approach of using discrete-symbols (where symbols represent entities in <strong>all-or-none</strong> fashion).
 VSA approach allows symbols to be compared for similarity.
 This present many benefits but also many challenges, as you would see.</p>
 <p>From practical programming standpoint what you will be able to do with <strong>Bi</strong> is two fold.</p>
 <p>You can just use the basic VSA capability of the package and build your own symbolic system using <strong>Python</strong>. Or simply play with the system.</p>
 <p>Or use the full framework that mimics <strong>Prolog</strong> system in its outward behavior. There were many reasons I started with this type of symbolic system. As you would see it is very natural extension to VSA.</p>
-<p>Probably Lisp system will feel at home too. In this tutorial I'm giving you at least the basic tools and theorethical background needed for you to start experimenting.
-Don't be scared once we are finished you will be surprised how easy it is.</p>
+<p>Probably Lisp system will feel at home too. In this tutorial I'm giving you at least the basic tools and theoretical background needed for you to start experimenting.
+Don't be scared once we are finished you will be surprised how easy and natural it is.</p>
 <p>At the moment I'm not so much interested of the pure logic capabilities of the Prolog-systems, but more about their symbol manipulation and relational characteristic. I hope to be able to integrate also in the near future a Production system and later Reinforcement learning as seamless part of the system. (I have some ideas floating in my mind, how to do it in coherent way. Lets hope they work ;).</p>
 <p>One side benefit of going on this journey with me is that you will also learn how to build your own Prolog interpreter, so you get two for one.</p>
 

@@ -219,11 +219,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>After this overview the next step is to take dive into basic theoretical aspects before we start implementing anything </em> :</p>
+<p><em>After this overview the next step is to take dive into basic theoretical aspects before we start implementing anything </em>.</p>
 <p>I said that <strong>Bi</strong> is based on large distributed vectors. This layer is superficially below <strong>Symbolic</strong> level that is why it is dubbed <strong>SUB-SYMBOLIC</strong> level.</p>
 <p>Most programing languages are generally based on alphabetic-discrete-symbols, for Bi at the moment that is the second layer where most of the implementation resides.
 In the future I want to move as much as possible down to the <strong>SUB-SYMBOLIC</strong> layer.</p>
-<h1 id="REPRESENTATION">REPRESENTATION<a class="anchor-link" href="#REPRESENTATION">&#182;</a></h1><p>I call my atomic structure <strong>Semantic Distributed Pointer (SDP)</strong> (<em>10_000 bits binary</em>) to differentiate from Nengo/NEF <strong>SP</strong>. (Still they resemble SP in many ways).</p>
+<h1 id="REPRESENTATION">REPRESENTATION<a class="anchor-link" href="#REPRESENTATION">&#182;</a></h1><p>I call my atomic structure <strong>Semantic Distributed Pointer (SDP)</strong> which is <em>10_000 bits binary</em> to differentiate from Nengo/NEF <strong>SP</strong>. (Still they resemble SP in many ways).</p>
 <p>Rather than just calling them <strong>HyperVectors</strong> (as per Kanerva), the name <strong>SDP</strong> more closely describes the use in Bi.. But no worry, both are Ok.</p>
 <p>Also to be distinguished by Numenta binary <strong>Sparse Distributed Representation (SDR)</strong>. Which is normaly 2048 bits and is sparse, <strong>SDP</strong> is not.</p>
 <p>Plus I reserve the right for <strong>SDP</strong> some day to be also real-valued if the need arise ( search : <em>HRR - Holographic Reduced Representations</em>, for more info ).</p>
@@ -245,14 +245,14 @@ In our case we are interested in binary vectors. Here again SDR and SDP differ.<
 <h2 id="Kanerva-:-BSC-(Binary-Spatter-Code)-">Kanerva : BSC (Binary Spatter Code) <a class="anchor-link" href="#Kanerva-:-BSC-(Binary-Spatter-Code)-">&#182;</a></h2><p>In <strong>Bi</strong> at the base of it all are binary hyper-vectors or in Bi lingo <strong>Semantic Distributed Pointers (SDP)</strong>.
 In the current implementation an SDP hyper-vector is <strong>10_000</strong> bits binary vector (size can be changed easily, but according to Kanerva that is the optimal size and who m'I to opine).</p>
 <p><em>Why binary ?</em></p>
-<p>I've been pursuing binary approach to machine intelligence for a long time, because it is no brainer.
+<p>I've been pursuing binary approach to machine intelligence (I make distinction between MI and AI) for a long time, because it is no brainer.
 Simplifies implementation and when people finally awake from "real-valued" hegemony ;), we will see some tremendous CPU acceleration in MI programs.
 Can you imagine there is not even software CPU optimized libraries for large bitarrays in almost any computer language !!! I've checked ;(. BTW FYI computers are machines build on binary !! go figure ...</p>
 <p><em>Why so big ?</em></p>
 <p>The reason is that at those sizes we get the required characteristics for doing clever stuff.</p>
 <p>The main characteristic of large vector spaces is <strong>ORTHOGONALITY</strong>. (<em>Very important</em>).
 (If you don't know what orthogonal means, think "perpendicular" in 2D space).</p>
-<blockquote><p>If we <em>randomly create 10_000 bits vector, where every bit has 50/50 chance of being 0 or 1</em>, we are guaranteed that any time we do that the vector will be orthogonal to all the previously created vectors. Wow, isn't that amazing ?</p>
+<blockquote><p>If we <em>randomly create 10_000 bits vector, where every bit has 50/50 chance of being 0 or 1</em>, we are guaranteed that any time we do that the vector will be nearly orthogonal to all the previously created vectors. Wow, isn't that amazing ? ( <em>Kanerva mentioned somewhere that this is valid even if you create millions of vectors</em> )</p>
 </blockquote>
 <p>(<em>Or we can talk about normally distributed real-valued vectors, with 100-300 dimensions : HRR</em>).</p>
 <p>This is HUGE, think about that for a minute ?!!</p>
@@ -900,6 +900,16 @@ You can always fetch the SDP by name if you need. The operation I mentioned is c
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is different ways to access the SDP by symbol-name :</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
@@ -932,6 +942,16 @@ You can always fetch the SDP by name if you need. The operation I mentioned is c
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lets add more symbols and build a structure out of them :</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

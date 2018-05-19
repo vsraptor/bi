@@ -22,7 +22,7 @@ class sdp: #utility class
 	random_trials = 0
 	#Used for similarity matching, 
 	#how many bits have to match for the result to be assumed TRUE
-	true_thresh = 0.42
+	true_thresh = 0.42 #yes this is that 42 ;)
 	nbits = 10000
 
 	@staticmethod

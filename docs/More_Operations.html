@@ -175,9 +175,18 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="[--HOME-|-Bi-]">[  <a href="http://ifni.co">HOME</a> | <a href="http://ifni.co/bi/TOC.html">Bi</a> ]<a class="anchor-link" href="#[--HOME-|-Bi-]">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -204,9 +213,9 @@ div#notebook {
 <p>$ analogy\_map * relation = reverse\_relation $</p>
 <p>because the <strong>bind</strong> operation is two way street.</p>
 <p>Now we can use the first equation for a <strong>training</strong> operation and the second as <strong>predicting/testing</strong> operation.
-The important part is that we can do this operation on a whole <strong>structure</strong> too, not just on single term.
+The important part is that we can do this operation on a whole <strong>structure</strong> too, not just on single term i.e. holistically.
 Plus this is <strong>one-shot</strong> learning, something you can't do with Neuro-networks.</p>
-<p>Let concretize the idea, the relations we will pick are <strong>"above"</strong> and correspondingly the reverse <strong>"below"</strong>. We will train <strong>"analogical map"</strong> that will virtually "swap" the position of two relations i.e. make one relation transform to the other. 
+<p>Lets concretize the idea, the relations we will pick are <strong>"above"</strong> and correspondingly the reverse <strong>"below"</strong>. We will train <strong>"analogical map"</strong> that will virtually "swap" the position of two relations i.e. make one relation transform to the other. 
 Here is what we have :</p>
 <p>-- <em>circle above a square</em> --</p>
 <p>$ cas = above + a\_role1 * circle + a\_role2 * square $</p>
@@ -231,7 +240,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">bi</span> <span class="kn">import</span> <span class="o">*</span>
@@ -258,7 +267,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#training data</span>
@@ -295,7 +304,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">cas</span> <span class="o">*</span> <span class="n">sbc</span>
@@ -311,14 +320,14 @@ Here is what we have :</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>now test it against the training example (measuring distance, btw). Seems OK.</p>
+<p>now test it against the <strong>training</strong> example (measuring distance, btw). Seems OK.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">cas</span><span class="p">)</span> <span class="o">%</span> <span class="n">sbc</span>
@@ -332,7 +341,7 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -350,14 +359,14 @@ Here is what we have :</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now lets try against the test structure, which we did not use in training :</p>
+<p>Now lets try against the <strong>test</strong> structure, which we did not use in training :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">sat</span><span class="p">)</span> <span class="o">%</span> <span class="n">tbs</span>
@@ -371,11 +380,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3720</pre>
+<pre>3779</pre>
 </div>
 
 </div>
@@ -396,7 +405,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">tbs</span><span class="p">)</span> <span class="o">%</span> <span class="n">sat</span>
@@ -410,11 +419,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3720</pre>
+<pre>3779</pre>
 </div>
 
 </div>
@@ -435,7 +444,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sdp</span><span class="o">.</span><span class="n">dist</span><span class="p">((</span><span class="n">M</span> <span class="o">*</span> <span class="n">sat</span><span class="p">),</span> <span class="n">tbs</span><span class="p">)</span>
@@ -449,11 +458,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[48]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3720</pre>
+<pre>3779</pre>
 </div>
 
 </div>
@@ -468,13 +477,14 @@ Here is what we have :</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The distance is ~38%, but we said that a distance below ~42% means that the symbols are similar (sdp.true_thresh).</p>
+<p>And the same this time the-boolean way :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sdp</span><span class="o">.</span><span class="n">sim</span><span class="p">((</span><span class="n">M</span> <span class="o">*</span> <span class="n">sat</span><span class="p">),</span> <span class="n">tbs</span><span class="p">)</span>
@@ -488,7 +498,7 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[49]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -506,14 +516,14 @@ Here is what we have :</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lets also test it with data that partially match with the training data :</p>
+<p>Lets also test it with data that <strong>partially</strong> match with the training data :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sdp</span><span class="o">.</span><span class="n">dist</span><span class="p">((</span><span class="n">M</span> <span class="o">*</span> <span class="n">sas</span><span class="p">),</span> <span class="n">sbs</span><span class="p">)</span>
@@ -527,11 +537,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2450</pre>
+<pre>2498</pre>
 </div>
 
 </div>
@@ -553,7 +563,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sdp</span><span class="o">.</span><span class="n">dist</span><span class="p">((</span><span class="n">M</span> <span class="o">*</span> <span class="n">sas2</span><span class="p">),</span> <span class="n">sbs2</span><span class="p">)</span>
@@ -567,11 +577,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3788</pre>
+<pre>3852</pre>
 </div>
 
 </div>
@@ -592,7 +602,7 @@ Here is what we have :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sdp</span><span class="o">.</span><span class="n">dist</span><span class="p">((</span><span class="n">M</span> <span class="o">*</span> <span class="n">sat</span><span class="p">),</span> <span class="n">sdp</span><span class="o">.</span><span class="n">rand</span><span class="p">())</span>
@@ -606,11 +616,11 @@ Here is what we have :</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[52]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4999</pre>
+<pre>5009</pre>
 </div>
 
 </div>
@@ -636,17 +646,23 @@ Here is what we have :</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Categorization">Categorization<a class="anchor-link" href="#Categorization">&#182;</a></h2><p>Another common human trait is <strong>Categorization</strong> or said it otherwise <strong>Concept creation</strong>.
+<h2 id="Categorization">Categorization<a class="anchor-link" href="#Categorization">&#182;</a></h2><p>Another common human trait is <strong>Categorization</strong> or said it otherwise <strong>Concept formation</strong>.
 Here again <strong>sub-symbolic</strong> operations can help us.
 Lets try very rudimentary categorization.</p>
-<p>We have several instances of chairs and we want to crystallize from them the concept of 'chairs'. (BTW we can ground those symbols on NN-Labels as we did with the 'summing' example).</p>
+<p><strong>Categorization</strong> is complex process and can be divided to at least two sub-phases.</p>
+<ul>
+<li>pattern recognition / grounding : were we associate the external pattern or behavior to a symbol.</li>
+<li>symbol/s adjustments : were we adjust the meaning of the symbol making it similar or dissimilar to other symbols i.e. clustering.</li>
+</ul>
+<p>In the current tutorial we are interested of the simplified second phase.</p>
+<p>For the purpose of this example we have several instances of chairs and we want to crystallize from them the concept of 'chairs'. (BTW we can ground those symbols on NN-Labels as we did with the 'summing' example).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">add_items</span><span class="p">([</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">,</span> <span class="s1">&#39;metal_chair&#39;</span><span class="p">,</span> <span class="s1">&#39;special_chair&#39;</span><span class="p">,</span> <span class="s1">&#39;wooden_table&#39;</span><span class="p">,</span> <span class="s1">&#39;chair&#39;</span><span class="p">])</span>
@@ -662,20 +678,21 @@ Lets try very rudimentary categorization.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So we want to be able to classify those chairs, by default as we know all the symbols are orthogonal. We need a way to make them more similar, for this reason we need an anchor that will serve the purpose of the <strong>category</strong> of <strong>chairs</strong>.</p>
+<p>As a prerequisite we know those chairs have to be 'closer', but by default all the symbols are orthogonal on instantiation. We need a way to make them more similar, for this reason we will use an <strong>anchor</strong> that serves the purpose of the <strong>category</strong> of <strong>chairs</strong>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#chairs are orthogonal to the concept</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#initially chairs are orthogonal to the concept</span>
 <span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
 <span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
 
+<span class="c1">#the instances themselves are also dissimilar by default, the goal: make them similar</span>
 <span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal_chair&#39;</span><span class="p">]</span>
 <span class="k">print</span> <span class="n">sdp</span><span class="o">.</span><span class="n">sim</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal_chair&#39;</span><span class="p">])</span>
 </pre></div>
@@ -690,9 +707,9 @@ Lets try very rudimentary categorization.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4987
-4918
-4927
+<pre>4929
+4946
+5025
 False
 </pre>
 </div>
@@ -708,14 +725,14 @@ False
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We know that the <strong>bundle</strong> operation aside from bundling also result in a vector closer to its operands (by hamming distance).</p>
-<p>So if we bundle every type of chair with the 'chair'-SDP we will move the vectors towards it, making them at the same time more similar themselves. (Of course if we use lexicon as we do here we have to update them using the <strong>.set()</strong> method).</p>
+<p>So if we bundle every type of chair with the 'chair-category'-SDP we will move the vectors towards it, making them at the same time more similar themselves. (Of course if we use lexicon as we do here we have to update them using the <strong>.set()</strong> method).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">new_wc</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
@@ -735,14 +752,14 @@ False
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lets compare again :</p>
+<p>Lets compare again the updated chairs :</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal_chair&#39;</span><span class="p">]</span>
@@ -759,7 +776,7 @@ False
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3679
+<pre>3776
 True
 </pre>
 </div>
@@ -774,14 +791,14 @@ True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now the distance shrunk, both against the other chairs and the chair-concept.</p>
+<p>Now the distance shrunk, both towards the other chairs and the chair-concept.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
@@ -798,8 +815,8 @@ True
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2465
-2458
+<pre>2498
+2508
 </pre>
 </div>
 </div>
@@ -820,7 +837,7 @@ True
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_chair&#39;</span><span class="p">]</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wooden_table&#39;</span><span class="p">]</span>
@@ -837,8 +854,8 @@ True
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>5085
-5044
+<pre>5044
+4994
 </pre>
 </div>
 </div>
@@ -852,7 +869,323 @@ True
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As I said this is rudimentary categorization, just to give you yet another idea of how to use the sub-symbolic  algebra. As I'm experimenting, I'm also contemplating a ways to integrate the SDP-algebra into the higher levels, such as the Prolog syntax.</p>
+<p>As I said this is rudimentary categorization, just to give you yet another idea of how to use the <strong>sub-symbolic  algebra</strong>. As I'm experimenting, I'm also contemplating a ways to integrate the SDP-algebra into the higher levels, such as the Prolog syntax, this way the symbols themselves can morph to more closely resemble the problem we are trying to solve.</p>
+<h3 id="Round-two">Round two<a class="anchor-link" href="#Round-two">&#182;</a></h3><p>Lets try it differently.</p>
+<p>This time we would use SDP <strong>structures</strong> to represent different types of chairs i.e. we will build them from more basic atoms, rather than being atomic in the first place.</p>
+<p>Remember SDPs less that <strong>42%</strong> apart are counted similar. I normally use dollar-symbols as a slot-name when building structures (or role if we think in role-filler terms), unless there is better way to describe the bind-pair.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">erase</span><span class="p">()</span> <span class="c1">#clear all the symbols from the lexer</span>
+<span class="c1">#... and add the new basic atoms</span>
+<span class="n">x</span><span class="o">.</span><span class="n">add_items</span><span class="p">([</span><span class="s1">&#39;wood&#39;</span><span class="p">,</span> <span class="s1">&#39;metal&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="s1">&#39;chair&#39;</span><span class="p">,</span> <span class="s1">&#39;$1&#39;</span><span class="p">,</span> <span class="s1">&#39;$2&#39;</span><span class="p">,</span> <span class="s1">&#39;isa&#39;</span><span class="p">,</span> <span class="s1">&#39;furniture&#39;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># create wooden-chair symbol-structure</span>
+<span class="n">wc</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;$1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wood&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
+<span class="c1"># create metal-chair symbol-structure</span>
+<span class="n">mc</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;$1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>both chairs should be similar because they both contain the 'isa * chair' bind category.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">wc</span> <span class="o">%</span> <span class="n">mc</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3732</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>but they will still be orthogonal to 'chair' itself, because it was included as bind-pair in the structure not as standalone item.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">wc</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5001</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is the correct way to compare it :</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">wc</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="k">print</span> <span class="n">mc</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="c1"># or you can use best-match to get the symbol name</span>
+<span class="k">print</span> <span class="n">x</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">wc</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2473
+2463
+chair
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now lets apply the first categorisation rule on the structured-chairs, namely make them super-category 'furniture'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#furniture-wooden-chair</span>
+<span class="n">fwc</span> <span class="o">=</span> <span class="n">wc</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;furniture&#39;</span><span class="p">]</span>
+<span class="c1">#furniture-metal-chair</span>
+<span class="n">fmc</span> <span class="o">=</span> <span class="n">mc</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;furniture&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we expected 'furniture-wooden-chair' is close to 'furniture-metal-chair'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fwc</span> <span class="o">%</span> <span class="n">fmc</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3439</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and 'furniture-wooden-chair' is close to 'wooden-chair' too.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fwc</span> <span class="o">%</span> <span class="n">wc</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2469</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But the important question to ask ourselves is did we ruined the initial structure i.e. can we still extract the roles and fillers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># does &#39;furniture-wooden-chair&#39; still contain &#39;wood&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;$1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">fwc</span><span class="p">)</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;wood&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">x</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;$1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">fwc</span><span class="p">)</span>
+
+<span class="c1">#same for &#39;metal&#39; and &#39;chair&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;$1&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">fmc</span><span class="p">)</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;metal&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;isa&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">fmc</span><span class="p">)</span> <span class="o">%</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;chair&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3715
+wood
+3809
+3805
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yes the structure seems to be still intact and we can query it. Of course the more 'categorizations' we apply the less probable is that we will succeed extracting information, but that is in sync with our expectations.</p>
+<p>It is important that we can peek even one level deep with single operation.
+The <strong>fuzziness</strong> and at the same time <strong>discreetness</strong> is one of the qualities we are looking for to bridge the gap between <strong>Connectionism</strong> and <strong>Symbolism</strong>.</p>
 
 </div>
 </div>
