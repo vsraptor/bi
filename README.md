@@ -1,10 +1,14 @@
 ### What is Bi ?
 
-Imagine programming with symbols in language like List or Prolog ... but at the same time those symbols are distributed-vectors, which can be mixed as only vectors can do, but still preserving their symbolic nature. Something like having the whole cake, but eating it too.
+When you use programming languages you depend on the symbols of the language to have a specific meaning, very rarely it is the case for a programming language to allow fuzzy and context based meaning, because it complicates the implementation. In natural languages concepts/symbols are both discrete and fuzzy at the same time.
 
-> Bi is build on top of the so called VSA (Vector Symbolic Architecture).
+To make programming languages more natural we have to embrace this dichotomy... one way to make the symbols behave this way is to represent symbols and/or context as vectors to achieve fuzziness, but still preserve discreteness.
 
-As the name implies the symbols are not your run of the mill symbols, but rather vector based i.e. symbolic system based on vector-distributed symbols, instead of traditional approach of using discrete-symbols (where symbols represent entities in all-or-none fashion). VSA approach allows symbols to be compared for similarity.
+Something like having the whole cake, but eating it too.
+
+    That is why Bi is build on top of the so called VSA (Vector Symbolic Architecture).
+
+....
 
 For more information look in the /docs directory or [Bi](http://ifni.co/bi/TOC.html).
 
