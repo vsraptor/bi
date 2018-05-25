@@ -18,3 +18,13 @@ Requires the following modules :
  - numpy
  - lark
  - lepl !
+
+Test it :
+
+
+    git clone git@github.com:vsraptor/bi.git bi
+    cd bi/test
+    time ./engine_bi.py 
+    ./unify.py
+ 
+ 
